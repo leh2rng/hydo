@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>Enhancing Exploration with Diffusion Policies in Hybrid Off-Policy RL: Application to Non-Prehensile Manipulation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -39,6 +39,84 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+  
+    gtag('js', new Date());
+  
+    gtag('config', 'G-PYVRSFMDRL');
+    
+    // Change Video
+    const successObjectList = [
+      "./static/demos/success/black-mug",
+      "./static/demos/success/blue-cup",
+      "./static/demos/success/box",
+      "./static/demos/success/hook",
+      "./static/demos/success/milk-carton",
+      "./static/demos/success/red-bottle",
+      "./static/demos/success/red-mug",
+      "./static/demos/success/toy-block",
+      "./static/demos/success/toy-bridge",
+      "./static/demos/success/wood-block",
+    ];
+      
+    const failureObjectList = [
+      "./static/demos/failure/failure-1",
+      "./static/demos/failure/failure-2",
+      "./static/demos/failure/failure-3"
+    ];
+    
+    const simObjectList = [
+      "./static/demos/sim/cube_1",
+      "./static/demos/sim/cube_2",
+      "./static/demos/sim/cup",
+      "./static/demos/sim/cube",
+      "./static/demos/sim/pillbottle",
+      "./static/demos/sim/teapot",
+    ]
+      
+    const failureTextList = [
+      "In this example, the estimated goal and the actual goal are not well aligned. The robot moves the object to the wrong estimated goal and achieves a “flow success”. Thus, it does not count as an actual success in our paper.",
+      "In this example, the action output from the policy tries to push the box down with multiple attempts. However, it sometimes misses the contact location potentially due to calibration error or inaccuracy of the low-level controller.",
+      "The robot tries to flip the mug by pushing at the bottom edge of the mug. However, such a motion might be difficult to execute due to the low surface friction of the mug. Also, the mug sometimes “jumps” away potentially due to low surface friction between the mug and the bin. Although eventually the robot is able to flip the mug upright, it fails to move the mug to the goal pose within the episode limit (10 steps)."
+    ];
+      
+    function switchSuccessVideo() {
+      var object = document.successObjectForm.switch.options[document.successObjectForm.switch.selectedIndex].value;
+      var videoList = Array();
+      
+  //		document.getElementById("test_text").textContent= "abc";
+      document.getElementById("real_video_success").src = successObjectList[object] + ".mp4";
+  //		document.getElementById("real_plot_success").src = successObjectList[object] + ".html";
+  //		document.getElementById("test_text").textContent= successObjectList[object];
+    }
+      
+    function switchFailureVideo() {
+      var object = document.failureObjectForm.switch.options[document.failureObjectForm.switch.selectedIndex].value;
+      var videoList = Array();
+      
+      document.getElementById("real_video_failure").src = failureObjectList[object] + ".mp4";
+  //		document.getElementById("real_plot_failure").src = failureObjectList[object] + ".html";
+      document.getElementById("failure-text").textContent= failureTextList[object];
+    }
+    
+    function switchSimVideo() {
+      var object = document.simObjectForm.switch.options[document.simObjectForm.switch.selectedIndex].value;
+      var videoList = Array();
+      console.log(object)
+      document.getElementById("sim_video").src = simObjectList[object] + ".mp4";
+      document.getElementById("sim_plot").src = simObjectList[object] + ".html";
+  //		document.getElementById("failure-text").textContent= failureTextList[object];
+    }
+  
+     
+    </script>
+  
 </head>
 <body>
 
@@ -50,7 +128,7 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
+  <!-- <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
       <a class="navbar-item" href="https://keunhong.com">
       <span class="icon">
@@ -79,7 +157,7 @@
       </div>
     </div>
 
-  </div>
+  </div> -->
 </nav>
 
 
@@ -88,38 +166,32 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">Enhancing Exploration with Diffusion Policies in Hybrid Off-Policy RL: Application to Non-Prehensile Manipulation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a href="#">Huy Le</a><sup>1,2</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a href="#">Miroslav Gabriel</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="#">Tai Hoang</a><sup>2</sup>,
+              </span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <a href="#">Gerhard Neumann</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+              <a href="#">Ngo Anh Vien</a><sup>1</sup>,
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>Bosch Center for Artificial Intelligence(BCAI)</span>
+            <span class="author-block"><sup>2</sup>Karlsruhe Institute of Technology</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/pdf/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -127,9 +199,9 @@
                   </span>
                   <span>Paper</span>
                 </a>
-              </span>
+              </span> -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -138,7 +210,7 @@
                 </a>
               </span>
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -146,26 +218,17 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (Comming Soon)</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
             </div>
 
           </div>
@@ -179,13 +242,11 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
+        <source src="./static/videos/conhysac_realrobot_speed_up.mp4"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        Our <span class="dnerf">HyDo</span> approach learns to align unseen 6D objects to target poses using contact-rich, dynamic non-prehensile motions, achieving multiple solution paths.
       </h2>
     </div>
   </div>
@@ -198,49 +259,64 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
           <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
+            <source src="./static/videos/RAL_lego_1.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
+            <source src="./static/videos/RAL_cube_1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/RAL_lotion_1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/RAL_lego_2.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-fullbody">
           <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
+            <source src="./static/videos/RAL_milk_1_translation.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/con_hysac_videos/video_34_success_push_push_push_flip.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/con_hysac_videos/video_36_success_push_flip_push.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/con_hysac_videos/video_40_success_push_flip.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/con_hysac_videos/video_41_success_push_push_flip_push.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -258,39 +334,36 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Learning diverse policies for non-prehensile manipulation is essential for improving skill transfer and generalization to out-of-distribution scenarios. In this work, we enhance exploration through a two-fold approach within a hybrid framework that tackles both discrete and continuous action spaces. First, we model the continuous motion parameter policy as a diffusion model, and second, we incorporate this into a maximum entropy reinforcement learning framework that unifies both the discrete and continuous components. The discrete action space, such as contact point selection, is optimized through Q-function maximization, while the continuous part is guided by a diffusion-based policy. This hybrid approach leads to a principled objective, where the maximum entropy term is derived as a lower bound using structured variational inference. We propose the Hybrid Diffusion Policy algorithm ({\bf \acrshort{hydo}}) and evaluate its performance on both simulation and zero-shot sim2real tasks. Our results show that HyDo encourages more diverse behavior policies, leading to a notable improvement in success rates, from 53\% to 72\% on a 6D pose alignment task.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
+  <div class="columns is-centered">
+        <div class="column is-full-width">
+        <h2 class="title is-3"><span class="dnerf">HyDo</span></h2>
+      <h3 class="title is-4"> <span class="dnerf">Hybrid Diffusion pOlicy</span> </h3>
+      <br>
+      <!-- Center Image -->
+      <div class="has-text-centered">
+        <img src="static/images/Diagram_rs.png" alt="Method Figure">
+      </div>
+      <br><br>
+      <p>
+        An overview of the proposed method. The point cloud observation includes the location of the points and point
+        features. The goal is represented as per-point flow of the object points. The actor takes the observation as input and outputs
+        an Actor Map of per-point motion parameters. The Actor Map is concatenated with the per-point critic features to generate
+        the Critic Map of per-point Q-values. Finally, we choose the best contact location according to the highest value in the Critic
+        Map and find the corresponding motion parameters in the Actor Map.
+      </p>
+    </div>
+      
+    </div>
+
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -298,8 +371,32 @@
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Paper video. -->
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/RAL_combine_realrobot_rebuttal.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/realrobot_translation_6d.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -312,13 +409,13 @@
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
+          <h2 class="title is-3">Diversity Evaluation Environment</h2>
+          <!-- <p>
             Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
             would be impossible without nerfies since it would require going through a wall.
-          </p>
+          </p> -->
           <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
+            <source src="./static/videos/RAL_de_sim.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -327,15 +424,15 @@
 
       <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
+        <h2 class="title is-3">Diversity Evaluation Env on Realrobot</h2>
         <div class="columns is-centered">
           <div class="column content">
-            <p>
+            <!-- <p>
               As a byproduct of our method, we can also solve the matting problem by ignoring
               samples that fall outside of a bounding box during rendering.
-            </p>
+            </p> -->
             <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
+              <source src="./static/videos/RAL_diversity_eval_realrobot.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -351,7 +448,7 @@
         <h2 class="title is-3">Animation</h2>
 
         <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+        <!-- <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
           <p>
             We can also animate the scene by interpolating the deformation latent codes of two input
@@ -381,11 +478,11 @@
             <p class="is-bold">End Frame</p>
           </div>
         </div>
-        <br/>
+        <br/> -->
         <!--/ Interpolating. -->
 
         <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
+        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
         <div class="content has-text-justified">
           <p>
             Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
@@ -402,7 +499,7 @@
             <source src="./static/videos/replay.mp4"
                     type="video/mp4">
           </video>
-        </div>
+        </div> -->
         <!--/ Re-rendering. -->
 
       </div>
@@ -411,7 +508,7 @@
 
 
     <!-- Concurrent Work. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -434,8 +531,64 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Concurrent Work. -->
+
+    <section class="section">
+      <div class="columns is-centered">
+        <h2 class="title is-3"><span class="dnerf"> Sim Results&nbsp; </span> with Interactive Visualizations&nbsp; </h2>
+      </div>
+      <br>
+      
+      <div class="container is-max-desktop has-text-centered">
+        <span>
+          <b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize different timesteps. 
+          Click on the legends <strong>on the plot</strong> to show/hide elements.
+        </span>
+      </div>
+        <br>
+      
+    <!--
+      <div class="columns is-centered">
+        <h3 class="title is-4"> Notations </h3>
+      </div>
+    -->
+      
+      <!-- <div class="container is-max-desktop">
+        <img src="static/figures/plotly_notations.png" alt="Legend notations">
+      </div>
+      <br> -->
+      
+      <div class="columns is-centered">
+      <p>
+        Object: &nbsp; </p>
+      <form method="" action="" name="simObjectForm">
+      <select size="1" name="switch" onchange="switchSimVideo();">
+        <option value="0">cube_1</option>
+        <option value="1">cube_2</option>
+        <option value="2">Cube</option>
+        <option value="3">Pill Bottle</option>
+        <option value="4">Teapot</option>
+      </select>
+      </form>
+      </div>
+      
+      
+    </section>
+    
+    <div class="is-centered columns">
+      <video id="sim_video"
+         controls
+         muted
+         preload
+         playsinline
+         height="640px"
+         width="55%">
+        <source src="./static/demos/sim/cube_1.mp4"
+            type="video/mp4">
+      </video>
+      <embed type="text/html" src="./static/demos/sim/cube_1.html" width="80%" height="640px" id="sim_plot">
+    </div>
 
   </div>
 </section>
@@ -444,11 +597,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{le2024enhancing,
+  author    = {Huy Le, Miroslav Gabriel, Tai Hoang, Gerhard Neumann, Ngo Anh Vien},
+  title     = {Enhancing Exploration with Diffusion Policies in Hybrid Off-Policy RL: Application to Non-Prehensile Manipulation},
+  journal   = {preprint},
+  year      = {2024},
 }</code></pre>
   </div>
 </section>
@@ -456,7 +609,7 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
+    <!-- <div class="content has-text-centered">
       <a class="icon-link"
          href="./static/videos/nerfies_paper.pdf">
         <i class="fas fa-file-pdf"></i>
@@ -464,22 +617,11 @@
       <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
-    </div>
+    </div> -->
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
+          <p>Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.</p>
         </div>
       </div>
     </div>
