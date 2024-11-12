@@ -70,14 +70,20 @@
       "./static/demos/failure/failure-2",
       "./static/demos/failure/failure-3"
     ];
-    
+
     const simObjectList = [
       "./static/demos/sim/cube_1",
       "./static/demos/sim/cube_2",
+      "./static/demos/sim/small_cup",
       "./static/demos/sim/cup",
-      "./static/demos/sim/cube",
-      "./static/demos/sim/pillbottle",
-      "./static/demos/sim/teapot",
+      "./static/demos/sim/mug",
+      "./static/demos/sim/medium_cup_1",
+      "./static/demos/sim/medium_cup_2",
+      "./static/demos/sim/cylinder",
+      "./static/demos/sim/bottle_1",
+      "./static/demos/sim/bottle_2",
+      "./static/demos/sim/lego",
+      "./static/demos/sim/thin_bottle",
     ]
       
     const failureTextList = [
@@ -505,34 +511,7 @@
       </div>
     </div>
     <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Concurrent Work. -->
+  </section>
 
     <section class="section">
       <div class="columns is-centered">
@@ -548,17 +527,6 @@
       </div>
         <br>
       
-    <!--
-      <div class="columns is-centered">
-        <h3 class="title is-4"> Notations </h3>
-      </div>
-    -->
-      
-      <!-- <div class="container is-max-desktop">
-        <img src="static/figures/plotly_notations.png" alt="Legend notations">
-      </div>
-      <br> -->
-      
       <div class="columns is-centered">
       <p>
         Object: &nbsp; </p>
@@ -566,29 +534,38 @@
       <select size="1" name="switch" onchange="switchSimVideo();">
         <option value="0">cube_1</option>
         <option value="1">cube_2</option>
-        <option value="2">Cube</option>
-        <option value="3">Pill Bottle</option>
-        <option value="4">Teapot</option>
+        <option value="2">small_cup</option>
+        <option value="3">cup</option>
+        <option value="4">mug</option>
+        <option value="5">medium_cup_1</option>
+        <option value="6">medium_cup_2</option>
+        <option value="7">cylinder</option>
+        <option value="8">bottle_1</option>
+        <option value="9">bottle_2</option>
+        <option value="10">lego</option>
+        <option value="11">thin_bottle</option>
       </select>
       </form>
       </div>
       
-      
     </section>
     
-    <div class="is-centered columns">
-      <video id="sim_video"
-         controls
-         muted
-         preload
-         playsinline
-         height="640px"
-         width="55%">
-        <source src="./static/demos/sim/cube_1.mp4"
-            type="video/mp4">
-      </video>
-      <embed type="text/html" src="./static/demos/sim/cube_1.html" width="80%" height="640px" id="sim_plot">
-    </div>
+    <section class="section">
+
+      <div class="is-centered columns">
+        <video id="sim_video"
+           controls
+           muted
+           preload
+           playsinline
+           height="640px"
+           width="55%">
+          <source src="./static/demos/sim/cube_1.mp4"
+              type="video/mp4">
+        </video>
+        <embed type="text/html" src="./static/demos/sim/cube_1.html" width="80%" height="640px" id="sim_plot">
+      </div>
+    </section>
 
   </div>
 </section>
@@ -621,7 +598,7 @@
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <p>Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.</p>
+          <p>Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> and <a href="https://hacman-2023.github.io/">HACMan</a>.</p>
         </div>
       </div>
     </div>
