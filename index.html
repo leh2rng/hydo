@@ -388,7 +388,7 @@
 
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Video</h2>
+          <h2 class="title is-3">Videos</h2>
           <div class="publication-video">
             <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/RAL_combine_realrobot_rebuttal.mp4" type="video/mp4">
@@ -399,7 +399,6 @@
 
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Video</h2>
           <div class="publication-video">
             <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/realrobot_translation_6d.mp4" type="video/mp4">
@@ -408,16 +407,69 @@
         </div>
       </div>
     </div>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+
+        <div class="columns is-centered">
+
+          <!-- Visual Effects. -->
+          <div class="column">
+            <div class="content">
+              <h2 class="title is-3">Rubik Cube <p style="font-size: 0.8em; color: blue; display: inline;">new</p>
+              </h2>
+              <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/new/RAL_video_1.mp4" type="video/mp4">
+              </video>
+              <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/new/RAL_video_2.mp4" type="video/mp4">
+              </video>
+              <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/new/RAL_video_3.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <!--/ Visual Effects. -->
+
+          <!-- Matting. -->
+          <div class="column">
+            <h2 class="title is-3">Foam Brick <p style="font-size: 0.8em; color: blue; display: inline;">new</p>
+            </h2>
+            <div class="columns is-centered">
+              <div class="column content">
+                <!-- <p>
+                As a byproduct of our method, we can also solve the matting problem by ignoring
+                samples that fall outside of a bounding box during rendering.
+              </p> -->
+                <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/new/foam_brick_1_1.mp4" type="video/mp4">
+                </video>
+                <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/new/foam_brick_1_2.mp4" type="video/mp4">
+                </video>
+                <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/new/foam_brick_2_1.mp4" type="video/mp4">
+                </video>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--/ Matting. -->
+    </section>
   </section>
 
   <section class="section">
     <div class="container is-max-desktop">
-
+      <h2 class="title is-3">Pushing Object toward target while avoiding obstacle <p
+          style="font-size: 0.8em; color: blue; display: inline;">new</p>
+      </h2>
       <div class="columns is-centered">
         <!-- Visual Effects. -->
         <div class="column">
           <div class="content">
-            <h2 class="title is-3">Pushing Object toward target w/o obstacle</h2>
+            <h2 class="title is-3">W/o obstacle
+            </h2>
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/new/RAL_video_avoid_obstacle_straight.mp4" type="video/mp4">
             </video>
@@ -427,7 +479,8 @@
 
         <!-- Matting. -->
         <div class="column">
-          <h2 class="title is-3">Pushing Object toward target with obstacle</h2>
+          <h2 class="title is-3">With obstacle
+          </h2>
           <div class="columns is-centered">
             <div class="column content">
               <!-- <p>
@@ -453,7 +506,9 @@
         <!-- Visual Effects. -->
         <div class="column">
           <div class="content">
-            <h2 class="title is-3">Diversity Evaluation Trajectory Visualization</h2>
+            <h2 class="title is-3">Diversity Evaluation Trajectory Visualization <p
+                style="font-size: 0.8em; color: blue; display: inline;">new</p>
+            </h2>
             <!-- Center Image -->
             <div class="has-text-centered">
               <img src="static/images/diversity_evaluation/diversity_eval.png" alt="Trajectory Visualization">
@@ -489,7 +544,7 @@
               As a byproduct of our method, we can also solve the matting problem by ignoring
               samples that fall outside of a bounding box during rendering.
             </p> -->
-              <video id="matting-video" controls playsinline height="100%">
+              <video id="matting-video" autoplay controls muted loop playsinline height="100%">
                 <source src="./static/videos/RAL_diversity_eval_realrobot.mp4" type="video/mp4">
               </video>
             </div>
@@ -501,8 +556,25 @@
   </section>
 
   <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Clutter Scene <p style="font-size: 0.8em; color: blue; display: inline;">new</p>
+          </h2>
+          <div class="publication-video">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/clutter_scene.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="section">
     <div class="columns is-centered">
-      <h2 class="title is-3"><span class="dnerf"> Sim Results&nbsp; </span> with Interactive Visualizations&nbsp; </h2>
+      <h2 class="title is-3"><span class="dnerf"> Simulation Results&nbsp; </span> with Interactive Visualizations&nbsp;
+      </h2>
     </div>
     <br>
 
