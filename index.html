@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+    content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Enhancing Exploration with Diffusion Policies in Hybrid Off-Policy RL: Application to Non-Prehensile Manipulation</title>
+  <title>Enhancing Exploration with Diffusion Policies in Hybrid Off-Policy RL: Application to Non-Prehensile
+    Manipulation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -22,15 +24,13 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -42,15 +42,15 @@
 
   <script>
     window.dataLayer = window.dataLayer || [];
-  
+
     function gtag() {
       dataLayer.push(arguments);
     }
-  
+
     gtag('js', new Date());
-  
+
     gtag('config', 'G-PYVRSFMDRL');
-    
+
     // Change Video
     const successObjectList = [
       "./static/demos/success/black-mug",
@@ -64,7 +64,7 @@
       "./static/demos/success/toy-bridge",
       "./static/demos/success/wood-block",
     ];
-      
+
     const failureObjectList = [
       "./static/demos/failure/failure-1",
       "./static/demos/failure/failure-2",
@@ -85,56 +85,57 @@
       "./static/demos/sim/lego",
       "./static/demos/sim/thin_bottle",
     ]
-      
+
     const failureTextList = [
       "In this example, the estimated goal and the actual goal are not well aligned. The robot moves the object to the wrong estimated goal and achieves a “flow success”. Thus, it does not count as an actual success in our paper.",
       "In this example, the action output from the policy tries to push the box down with multiple attempts. However, it sometimes misses the contact location potentially due to calibration error or inaccuracy of the low-level controller.",
       "The robot tries to flip the mug by pushing at the bottom edge of the mug. However, such a motion might be difficult to execute due to the low surface friction of the mug. Also, the mug sometimes “jumps” away potentially due to low surface friction between the mug and the bin. Although eventually the robot is able to flip the mug upright, it fails to move the mug to the goal pose within the episode limit (10 steps)."
     ];
-      
+
     function switchSuccessVideo() {
       var object = document.successObjectForm.switch.options[document.successObjectForm.switch.selectedIndex].value;
       var videoList = Array();
-      
-  //		document.getElementById("test_text").textContent= "abc";
+
+      //		document.getElementById("test_text").textContent= "abc";
       document.getElementById("real_video_success").src = successObjectList[object] + ".mp4";
-  //		document.getElementById("real_plot_success").src = successObjectList[object] + ".html";
-  //		document.getElementById("test_text").textContent= successObjectList[object];
+      //		document.getElementById("real_plot_success").src = successObjectList[object] + ".html";
+      //		document.getElementById("test_text").textContent= successObjectList[object];
     }
-      
+
     function switchFailureVideo() {
       var object = document.failureObjectForm.switch.options[document.failureObjectForm.switch.selectedIndex].value;
       var videoList = Array();
-      
+
       document.getElementById("real_video_failure").src = failureObjectList[object] + ".mp4";
-  //		document.getElementById("real_plot_failure").src = failureObjectList[object] + ".html";
-      document.getElementById("failure-text").textContent= failureTextList[object];
+      //		document.getElementById("real_plot_failure").src = failureObjectList[object] + ".html";
+      document.getElementById("failure-text").textContent = failureTextList[object];
     }
-    
+
     function switchSimVideo() {
       var object = document.simObjectForm.switch.options[document.simObjectForm.switch.selectedIndex].value;
       var videoList = Array();
       console.log(object)
       document.getElementById("sim_video").src = simObjectList[object] + ".mp4";
       document.getElementById("sim_plot").src = simObjectList[object] + ".html";
-  //		document.getElementById("failure-text").textContent= failureTextList[object];
+      //		document.getElementById("failure-text").textContent= failureTextList[object];
     }
-  
-     
-    </script>
-  
+
+
+  </script>
+
 </head>
+
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <!-- <div class="navbar-menu">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <!-- <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
       <a class="navbar-item" href="https://keunhong.com">
       <span class="icon">
@@ -164,40 +165,41 @@
     </div>
 
   </div> -->
-</nav>
+  </nav>
 
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Enhancing Exploration with Diffusion Policies in Hybrid Off-Policy RL: Application to Non-Prehensile Manipulation</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="#">Huy Le</a><sup>1,2</sup>,</span>
-            <span class="author-block">
-              <a href="#">Miroslav Gabriel</a><sup>1</sup>,</span>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Enhancing Exploration with Diffusion Policies in Hybrid Off-Policy
+              RL: Application to Non-Prehensile Manipulation</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="#">Huy Le</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="#">Miroslav Gabriel</a><sup>1</sup>,</span>
               <span class="author-block">
                 <a href="#">Tai Hoang</a><sup>2</sup>,
               </span>
-            <span class="author-block">
-              <a href="#">Gerhard Neumann</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="#">Ngo Anh Vien</a><sup>1</sup>,
-            </span>
-          </div>
+              <span class="author-block">
+                <a href="#">Gerhard Neumann</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="#">Ngo Anh Vien</a><sup>1</sup>,
+              </span>
+            </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Bosch Center for Artificial Intelligence(BCAI)</span>
-            <span class="author-block"><sup>2</sup>Karlsruhe Institute of Technology</span>
-          </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Bosch Center for Artificial Intelligence(BCAI)</span>
+              <span class="author-block"><sup>2</sup>Karlsruhe Institute of Technology</span>
+            </div>
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <!-- <span class="link-block">
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- <span class="link-block">
                 <a href="https://arxiv.org/pdf/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -206,17 +208,16 @@
                   <span>Paper</span>
                 </a>
               </span> -->
-              <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2411.14913" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -225,151 +226,156 @@
                   <span>Video</span>
                 </a>
               </span> -->
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code (Comming Soon)</span>
+                    </span>
+                    <span>Code (Comming Soon)</span>
                   </a>
-              </span>
-            </div>
+                </span>
+              </div>
 
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/conhysac_realrobot_speed_up.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          Our <span class="dnerf">HyDo</span> approach learns to align unseen 6D objects to target poses using
+          contact-rich, dynamic non-prehensile motions, achieving multiple solution paths.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-light is-small">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/conhysac_realrobot_speed_up.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Our <span class="dnerf">HyDo</span> approach learns to align unseen 6D objects to target poses using contact-rich, dynamic non-prehensile motions, achieving multiple solution paths.
-      </h2>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/RAL_lego_1.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/RAL_cube_1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/RAL_lotion_1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/RAL_lego_2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/RAL_milk_1_translation.mp4"
-                    type="video/mp4">
-          </video>
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/RAL_lego_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/RAL_cube_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/RAL_lotion_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-chair-tp">
+            <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/RAL_lego_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/RAL_milk_1_translation.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/con_hysac_videos/video_34_success_push_push_push_flip.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/con_hysac_videos/video_36_success_push_flip_push.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/con_hysac_videos/video_40_success_push_flip.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/con_hysac_videos/video_41_success_push_push_flip_push.mp4"
-                    type="video/mp4">
-          </video>
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/con_hysac_videos/video_34_success_push_push_push_flip.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-chair-tp">
+            <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/con_hysac_videos/video_36_success_push_flip_push.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/con_hysac_videos/video_40_success_push_flip.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/con_hysac_videos/video_41_success_push_push_flip_push.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Learning diverse policies for non-prehensile manipulation is essential for improving skill transfer and
+              generalization to out-of-distribution scenarios. In this work, we enhance exploration through a two-fold
+              approach within a hybrid framework that tackles both discrete and continuous action spaces. First, we
+              model the continuous motion parameter policy as a diffusion model, and second, we incorporate this into a
+              maximum entropy reinforcement learning framework that unifies both the discrete and continuous components.
+              The discrete action space, such as contact point selection, is optimized through Q-function maximization,
+              while the continuous part is guided by a diffusion-based policy. This hybrid approach leads to a
+              principled objective, where the maximum entropy term is derived as a lower bound using structured
+              variational inference. We propose the Hybrid Diffusion Policy algorithm (Hydo) and evaluate its
+              performance on both simulation and zero-shot sim2real tasks. Our results show that HyDo
+              encourages more diverse behavior policies, leading to a notable improvement in success rates, from 53% to
+              72% on a 6D pose alignment task.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3"><span class="dnerf">HyDo</span></h2>
+          <h3 class="title is-4"> <span class="dnerf">Hybrid Diffusion pOlicy</span> </h3>
+          <br>
+          <!-- Center Image -->
+          <div class="has-text-centered">
+            <img src="static/images/Diagram_rs.png" alt="Method Figure">
+          </div>
+          <br><br>
           <p>
-            Learning diverse policies for non-prehensile manipulation is essential for improving skill transfer and generalization to out-of-distribution scenarios. In this work, we enhance exploration through a two-fold approach within a hybrid framework that tackles both discrete and continuous action spaces. First, we model the continuous motion parameter policy as a diffusion model, and second, we incorporate this into a maximum entropy reinforcement learning framework that unifies both the discrete and continuous components. The discrete action space, such as contact point selection, is optimized through Q-function maximization, while the continuous part is guided by a diffusion-based policy. This hybrid approach leads to a principled objective, where the maximum entropy term is derived as a lower bound using structured variational inference. We propose the Hybrid Diffusion Policy algorithm ({\bf \acrshort{hydo}}) and evaluate its performance on both simulation and zero-shot sim2real tasks. Our results show that HyDo encourages more diverse behavior policies, leading to a notable improvement in success rates, from 53\% to 72\% on a 6D pose alignment task.
+            An overview of the proposed method. The point cloud observation includes the location of the points and
+            point
+            features. The goal is represented as per-point flow of the object points. The actor takes the observation as
+            input and outputs
+            an Actor Map of per-point motion parameters. The Actor Map is concatenated with the per-point critic
+            features to generate
+            the Critic Map of per-point Q-values. Finally, we choose the best contact location according to the highest
+            value in the Critic
+            Map and find the corresponding motion parameters in the Actor Map.
           </p>
         </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
 
-  <div class="columns is-centered">
-        <div class="column is-full-width">
-        <h2 class="title is-3"><span class="dnerf">HyDo</span></h2>
-      <h3 class="title is-4"> <span class="dnerf">Hybrid Diffusion pOlicy</span> </h3>
-      <br>
-      <!-- Center Image -->
-      <div class="has-text-centered">
-        <img src="static/images/Diagram_rs.png" alt="Method Figure">
       </div>
-      <br><br>
-      <p>
-        An overview of the proposed method. The point cloud observation includes the location of the points and point
-        features. The goal is represented as per-point flow of the object points. The actor takes the observation as input and outputs
-        an Actor Map of per-point motion parameters. The Actor Map is concatenated with the per-point critic features to generate
-        the Critic Map of per-point Q-values. Finally, we choose the best contact location according to the highest value in the Critic
-        Map and find the corresponding motion parameters in the Actor Map.
-      </p>
-    </div>
-      
-    </div>
 
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
+      <!-- Paper video. -->
+      <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -378,215 +384,190 @@
         </div>
       </div>
     </div> -->
-    <!--/ Paper video. -->
+      <!--/ Paper video. -->
 
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/RAL_combine_realrobot_rebuttal.mp4"
-                    type="video/mp4">
-          </video>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/RAL_combine_realrobot_rebuttal.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/realrobot_translation_6d.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/realrobot_translation_6d.mp4"
-                    type="video/mp4">
-          </video>
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+        <!-- Visual Effects. -->
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Pushing Object toward target w/o obstacle</h2>
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/new/RAL_video_avoid_obstacle_straight.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <!--/ Visual Effects. -->
+
+        <!-- Matting. -->
+        <div class="column">
+          <h2 class="title is-3">Pushing Object toward target with obstacle</h2>
+          <div class="columns is-centered">
+            <div class="column content">
+              <!-- <p>
+                Note that the shaking behavior came from the low-level controller, which try to reach a low point.
+              </p> -->
+              <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/new/RAL_video_avoid_obstacle.mp4" type="video/mp4">
+              </video>
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+      <!--/ Matting. -->
+  </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
+  <section class="section">
+    <div class="container is-max-desktop">
 
-    <div class="columns is-centered">
+      <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Diversity Evaluation Environment</h2>
-          <!-- <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p> -->
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/RAL_de_sim.mp4"
-                    type="video/mp4">
-          </video>
+        <!-- Visual Effects. -->
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Diversity Evaluation Trajectory Visualization</h2>
+            <!-- Center Image -->
+            <div class="has-text-centered">
+              <img src="static/images/diversity_evaluation/diversity_eval.png" alt="Trajectory Visualization">
+            </div>
+          </div>
         </div>
+        <!--/ Visual Effects. -->
       </div>
-      <!--/ Visual Effects. -->
+  </section>
 
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Diversity Evaluation Env on Realrobot</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <!-- <p>
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+
+        <!-- Visual Effects. -->
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Diversity Evaluation Push Alignment</h2>
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/RAL_de_sim.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <!--/ Visual Effects. -->
+
+        <!-- Matting. -->
+        <div class="column">
+          <h2 class="title is-3">Diversity Evaluation Env on Realrobot</h2>
+          <div class="columns is-centered">
+            <div class="column content">
+              <!-- <p>
               As a byproduct of our method, we can also solve the matting problem by ignoring
               samples that fall outside of a bounding box during rendering.
             </p> -->
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/RAL_diversity_eval_realrobot.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <!-- <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+              <video id="matting-video" controls playsinline height="100%">
+                <source src="./static/videos/RAL_diversity_eval_realrobot.mp4" type="video/mp4">
+              </video>
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
+
           </div>
         </div>
-        <br/> -->
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div> -->
-        <!--/ Re-rendering. -->
-
       </div>
-    </div>
-    <!--/ Animation. -->
+      <!--/ Matting. -->
   </section>
 
-    <section class="section">
-      <div class="columns is-centered">
-        <h2 class="title is-3"><span class="dnerf"> Sim Results&nbsp; </span> with Interactive Visualizations&nbsp; </h2>
-      </div>
-      <br>
-      
-      <div class="container is-max-desktop has-text-centered">
-        <span>
-          <b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize different timesteps. 
-          Click on the legends <strong>on the plot</strong> to show/hide elements.
-        </span>
-      </div>
-        <br>
-      
-      <div class="columns is-centered">
+  <section class="section">
+    <div class="columns is-centered">
+      <h2 class="title is-3"><span class="dnerf"> Sim Results&nbsp; </span> with Interactive Visualizations&nbsp; </h2>
+    </div>
+    <br>
+
+    <div class="container is-max-desktop has-text-centered">
+      <span>
+        <b> Interactive Visuliazation: </b>&nbsp; Drag the slider to visualize different timesteps.
+        Click on the legends <strong>on the plot</strong> to show/hide elements.
+      </span>
+    </div>
+    <br>
+
+    <div class="columns is-centered">
       <p>
         Object: &nbsp; </p>
       <form method="" action="" name="simObjectForm">
-      <select size="1" name="switch" onchange="switchSimVideo();">
-        <option value="0">cube_1</option>
-        <option value="1">cube_2</option>
-        <option value="2">small_cup</option>
-        <option value="3">cup</option>
-        <option value="4">mug</option>
-        <option value="5">medium_cup_1</option>
-        <option value="6">medium_cup_2</option>
-        <option value="7">cylinder</option>
-        <option value="8">bottle_1</option>
-        <option value="9">bottle_2</option>
-        <option value="10">lego</option>
-        <option value="11">thin_bottle</option>
-      </select>
+        <select size="1" name="switch" onchange="switchSimVideo();">
+          <option value="0">cube_1</option>
+          <option value="1">cube_2</option>
+          <option value="2">small_cup</option>
+          <option value="3">cup</option>
+          <option value="4">mug</option>
+          <option value="5">medium_cup_1</option>
+          <option value="6">medium_cup_2</option>
+          <option value="7">cylinder</option>
+          <option value="8">bottle_1</option>
+          <option value="9">bottle_2</option>
+          <option value="10">lego</option>
+          <option value="11">thin_bottle</option>
+        </select>
       </form>
-      </div>
-      
-    </section>
-    
-    <section class="section">
+    </div>
 
-      <div class="is-centered columns">
-        <video id="sim_video"
-           controls
-           muted
-           preload
-           playsinline
-           height="640px"
-           width="55%">
-          <source src="./static/demos/sim/cube_1.mp4"
-              type="video/mp4">
-        </video>
-        <embed type="text/html" src="./static/demos/sim/cube_1.html" width="80%" height="640px" id="sim_plot">
-      </div>
-    </section>
+  </section>
+
+  <section class="section">
+
+    <div class="is-centered columns">
+      <video id="sim_video" controls muted preload playsinline height="640px" width="55%">
+        <source src="./static/demos/sim/cube_1.mp4" type="video/mp4">
+      </video>
+      <embed type="text/html" src="./static/demos/sim/cube_1.html" width="80%" height="640px" id="sim_plot">
+    </div>
+  </section>
 
   </div>
-</section>
+  </section>
 
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{le2024enhancing,
-  author    = {Huy Le, Miroslav Gabriel, Tai Hoang, Gerhard Neumann, Ngo Anh Vien},
-  title     = {Enhancing Exploration with Diffusion Policies in Hybrid Off-Policy RL: Application to Non-Prehensile Manipulation},
-  journal   = {preprint},
-  year      = {2024},
-}</code></pre>
-  </div>
-</section>
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{le2024enhancing,
+      author    = {Huy Le, Miroslav Gabriel, Tai Hoang, Gerhard Neumann, Ngo Anh Vien},
+      title     = {Enhancing Exploration with Diffusion Policies in Hybrid Off-Policy RL: Application to Non-Prehensile Manipulation},
+      journal   = {preprint},
+      year      = {2024},
+    }</code>
+    </pre>
+    </div>
+  </section>
 
 
-<footer class="footer">
-  <div class="container">
-    <!-- <div class="content has-text-centered">
+  <footer class="footer">
+    <div class="container">
+      <!-- <div class="content has-text-centered">
       <a class="icon-link"
          href="./static/videos/nerfies_paper.pdf">
         <i class="fas fa-file-pdf"></i>
@@ -595,15 +576,17 @@
         <i class="fab fa-github"></i>
       </a>
     </div> -->
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> and <a href="https://hacman-2023.github.io/">HACMan</a>.</p>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> and <a
+                href="https://hacman-2023.github.io/">HACMan</a>.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
+
 </html>
