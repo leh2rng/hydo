@@ -418,6 +418,11 @@
             <div class="content">
               <h2 class="title is-3">Rubik Cube <p style="font-size: 0.8em; color: blue; display: inline;">new</p>
               </h2>
+              <p>
+                We have created a setup that closely reflects a real-world scenario. The scene objects are cluttered
+                with the manipulation object. In this demonstration, we perform a 6D pose alignment task with a Rubik's
+                Cube, including two additional scene objects.
+              </p>
               <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
                 <source src="./static/videos/new/RAL_video_1.mp4" type="video/mp4">
               </video>
@@ -437,10 +442,11 @@
             </h2>
             <div class="columns is-centered">
               <div class="column content">
-                <!-- <p>
-                As a byproduct of our method, we can also solve the matting problem by ignoring
-                samples that fall outside of a bounding box during rendering.
-              </p> -->
+                <p>
+                  We demonstrate a 6D pose alignment task with a foam brick, including five scene objects. These objects
+                  are cluttered around the manipulation object. This setup strongly reflects a real-world scenario.
+                </p>
+                <div style="height: 24px;"></div>
                 <video id="matting-video" autoplay controls muted loop playsinline height="100%">
                   <source src="./static/videos/new/foam_brick_1_1.mp4" type="video/mp4">
                 </video>
@@ -461,41 +467,44 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Pushing Object toward target while avoiding obstacle <p
-          style="font-size: 0.8em; color: blue; display: inline;">new</p>
+      <h2 class="title is-3">Pushing an Object Toward the Target While Avoiding Obstacle
+        <p style="font-size: 0.8em; color: blue; display: inline;">new</p>
       </h2>
+      <p>
+        This task demonstrates that by segmenting out the background, we do not lose essential information about the
+        environment.
+        Given the same initial position, the robot must push the object to the other side.
+        Note that the shaking behavior is caused by the low-level controller, which attempts to reach a lower point.
+      </p>
+
       <div class="columns is-centered">
-        <!-- Visual Effects. -->
+        <!-- Without Obstacle -->
         <div class="column">
           <div class="content">
-            <h2 class="title is-3">W/o obstacle
-            </h2>
+            <h2 class="title is-3">Without Obstacle</h2>
+            <p>In the scene without an obstacle, the robot pushes the object directly toward the goal.</p>
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/new/RAL_video_avoid_obstacle_straight.mp4" type="video/mp4">
             </video>
           </div>
         </div>
-        <!--/ Visual Effects. -->
+        <!--/ Without Obstacle -->
 
-        <!-- Matting. -->
+        <!-- With Obstacle -->
         <div class="column">
-          <h2 class="title is-3">With obstacle
-          </h2>
-          <div class="columns is-centered">
-            <div class="column content">
-              <!-- <p>
-                Note that the shaking behavior came from the low-level controller, which try to reach a low point.
-              </p> -->
-              <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/new/RAL_video_avoid_obstacle.mp4" type="video/mp4">
-              </video>
-            </div>
-
+          <div class="column content">
+            <h2 class="title is-3">With Obstacle</h2>
+            <p>In the presence of an obstacle, the robot pushes the object around it to reach the target.</p>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/new/RAL_video_avoid_obstacle.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
+        <!--/ With Obstacle -->
       </div>
-      <!--/ Matting. -->
+    </div>
   </section>
+
 
 
   <section class="section">
@@ -506,9 +515,26 @@
         <!-- Visual Effects. -->
         <div class="column">
           <div class="content">
-            <h2 class="title is-3">Diversity Evaluation Trajectory Visualization <p
+            <h2 class="title is-3">Diversity Evaluation: Trajectory Visualization <p
                 style="font-size: 0.8em; color: blue; display: inline;">new</p>
             </h2>
+            <!-- 
+            <p>
+              The pushing task is similar to the avoiding task in Jia et al. (2024), where the goal is to push a cube
+              over a red line. This task is designed to evaluate the model's ability to capture diverse solutions. There
+              are 24 different successful ways to complete the task.
+            </p>
+             -->
+            <p>
+              The pushing task is similar to the avoiding task in Jia et al. (2024). This task is designed to evaluate
+              the model's ability to capture diverse solutions. There are 24 different successful ways to complete the
+              task.
+            </p>
+            <p>
+              We visualize the trajectory of the manipulated object. HACMan and HyDo (w/o Diff) fail to explore
+              alternative strategies and converge to a single solution. In contrast, diffusion-based methods
+              successfully discover and complete the task using multiple diverse trajectories.
+            </p>
             <!-- Center Image -->
             <div class="has-text-centered">
               <img src="static/images/diversity_evaluation/diversity_eval.png" alt="Trajectory Visualization">
@@ -562,6 +588,10 @@
           <h2 class="title is-3">Cluttered Environment <p style="font-size: 0.8em; color: blue; display: inline;">new
             </p>
           </h2>
+          <p>
+            We included videos in a cluttered environment where the manipulation object is surrounded by scene objects.
+            This highlights that our setup can work in real-world scenarios.
+          </p>
           <div class="publication-video">
             <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/clutter_scene.mp4" type="video/mp4">
