@@ -474,17 +474,19 @@
         This task demonstrates that by segmenting out the background, we do not lose essential information about the
         environment.
         Given the same initial position, the robot must push the object to the other side.
-        Note that the shaking behavior is caused by the low-level controller, which attempts to reach a lower point.
       </p>
 
       <div class="columns is-centered">
         <!-- Without Obstacle -->
         <div class="column">
-          <div class="content">
+          <div class="column content">
             <h2 class="title is-3">Without Obstacle</h2>
             <p>In the scene without an obstacle, the robot pushes the object directly toward the goal.</p>
             <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/new/RAL_video_avoid_obstacle_straight.mp4" type="video/mp4">
+              <source src="./static/videos/new/RAL_with_no_obstacle_1.mp4" type="video/mp4">
+            </video>
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/new/RAL_with_no_obstacle_2.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -496,7 +498,10 @@
             <h2 class="title is-3">With Obstacle</h2>
             <p>In the presence of an obstacle, the robot pushes the object around it to reach the target.</p>
             <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/new/RAL_video_avoid_obstacle.mp4" type="video/mp4">
+              <source src="./static/videos/new/RAL_with_obstacle_2.mp4" type="video/mp4">
+            </video>
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/new/RAL_with_obstacle_1.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -589,8 +594,8 @@
             </p>
           </h2>
           <p>
-            We included videos in a cluttered environment where the manipulation object is surrounded by scene objects.
-            This highlights that our setup can work in real-world scenarios.
+            We included videos in a cluttered environment where the manipulated object is surrounded by scene objects.
+            This highlights the robustness of our method.
           </p>
           <div class="publication-video">
             <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
